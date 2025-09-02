@@ -1,11 +1,9 @@
 
 
 # add code below ...
-#Generate a function in Python for solving palindrome with attributes taken as words or sentences with spaces as well as punctuations. 
-#Also keep in mind that the function receiving the strings would return true or False depending on whether it is a palindrome or not.
-#Example of a Palindrome is 'racecar'. it reads the same forward or backward. Another example for your reference is 'Nurses run' since it reads the same if we remove the space between them.
-#Another important thing to note down for you is i need 0 and o to be seen as same in testcases like for the testcase of 'Sit on a potato pan, 0tis'. Do this as well
+#Generate a function in Python for solving palindrome with attributes taken as words or sentences with spaces as well as punctuations.
 
+#Defining a function to remove spaces, punctuation and convert the letters to lowercase. Also to treat '0' as 'o'
 def normalize(s):
     # Remove spaces and punctuation, convert to lowercase, and treat '0' as 'o'
     return ''.join(('o' if c.lower() in ['o', '0'] else c.lower()) for c in s if c.isalnum())
@@ -66,18 +64,12 @@ def parentheses_balance(sequence):
     return balance == 0
 
 # Test cases
-print(parentheses_stack("((blah)()()())"))      # True
-print(parentheses_stack("(((())blee))"))        # True
-print(parentheses_stack("(()hello((())()))"))   # True
-print(parentheses_stack("((((((())"))           # False
-print(parentheses_stack("()))"))                # False
-
 print(parentheses_balance("((blah)()()())"))      # True
 print(parentheses_balance("(((())blee))"))        # True
 print(parentheses_balance("(()hello((())()))"))   # True
 print(parentheses_balance("((((((())"))           # False
 print(parentheses_balance("()))"))                # False
-# how is the second implementation better than the first one?
+
 # The second implementation is better in terms of space complexity because it uses a single integer variable (balance) instead of a stack to keep track of the parentheses. This reduces the memory overhead, especially for long strings with many nested parentheses.
 stri1 = "(((ABC)))"
 stri2 = "((qc)"
